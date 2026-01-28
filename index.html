@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CPU Scheduling Simulator</h1>
+
+  <div class="inputs">
+    <label>Number of Processes: <input type="number" id="numProcesses" min="1"></label>
+    <button onclick="generateProcessInputs()">Generate</button>
+  </div>
+
+  <form id="processForm"></form>
+
+  <div class="algorithm-selection">
+    <label><input type="radio" name="algorithm" value="fcfs" checked> FCFS</label>
+    <label><input type="radio" name="algorithm" value="sjf"> SJF</label>
+    <label><input type="radio" name="algorithm" value="rr"> Round Robin</label>
+    <input type="number" id="quantum" placeholder="Quantum (RR only)" min="1">
+  </div>
+
+  <button onclick="runSimulation()">Run Simulation</button>
+
+  <h2>Gantt Chart</h2>
+  <div id="ganttChart" class="gantt"></div>
+
+  <h2>Results</h2>
+  <div id="results"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
